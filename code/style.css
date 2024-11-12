@@ -33,17 +33,38 @@ h1::after {
 }
 
 .description {
-  display: none;
+  /* display: none; */
+  max-height: 0;
+  overflow: hidden;
   background-color: rgb(225, 225, 225);
   padding: 0 20px;
+  transition: all 0.5s ease-out;
 }
 
 .active + .description {
-  display: block;
+  /* display: block; */
+  max-height: 500px;
+  padding: 20px 20px;
+  margin-bottom: 20px;
 }
 
 .title {
-  padding: 20px;
+  padding: 20px 0;
   position: relative;
   cursor: pointer;
+}
+.title:hover {
+  background-color: #00000044 !important;
+}
+.title::before {
+  content: "\f067";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin: 20px;
+}
+
+.title.active::before {
+  content: "\f068";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
