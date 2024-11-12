@@ -22,11 +22,7 @@ async function getPost() {
     container.appendChild(title);
     container.appendChild(description);
 
-    // Selects and HTML element, and calls a function which will be executed when the element is clicked.
-    const titleElement = document.querySelectorAll(".title");
-    titleElement.forEach((element) => {
-      element.addEventListener("click", toggle);
-    });
+    title.addEventListener("click", toggle);
   });
 }
 getPost();
