@@ -10,11 +10,12 @@ async function getPost() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await response.json();
 
-  data.forEach((element) => {
+  data.forEach((element, index) => {
     const title = document.createElement("div");
     title.className = "title";
     title.innerHTML = `${element.title}`;
-
+    title.style.backgroundColor =
+      index % 2 === 0 ? "rgb(233, 233, 233)" : "rgb(202, 202, 202)";
     const description = document.createElement("div");
     description.className = "description";
     description.innerHTML = `<p>${element.body}</p>`;
